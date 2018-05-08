@@ -566,7 +566,7 @@ def data_for_drilldown_graphs(request):
     mandi_crop_prices = CombinedTransaction.objects.filter(
         **filter_args).values('crop__id', 'mandi__id').annotate(Min('price'), Max('price'))
 
-    gaddidar_contribution = calculate_gaddidar_share(
+    gaddidar_contribution = calculate_gaddidar_share_payments(
         start_date, end_date, mandi_ids, aggregator_ids)
 
     aggregator_incentive_cost = calculate_aggregator_incentive(start_date, end_date, mandi_ids, aggregator_ids)
@@ -630,11 +630,10 @@ def data_for_line_graph(request):
     crop_prices = CombinedTransaction.objects.filter(
         **filter_args).values('crop__id', 'date').annotate(Min('price'), Max('price'), Sum('quantity'), Sum('amount'))
 
-    aggregator_incentive_cost = calculate_aggregator_incentive(start_date, end_date, mandi_ids, aggregator_ids)
+   # aggregator_incentive_cost = calculate_aggregator_incentive(start_date, end_date, mandi_ids, aggregator_ids)
 
     chart_dict = {'transport_data': list(transport_data), 'crop_prices': list(
-        crop_prices), 'dates': list(dates), 'aggregator_data': list(aggregator_data),
-                  'aggregator_incentive_cost': aggregator_incentive_cost}
+        crop_prices), 'dates': list(dates), 'aggregator_data': list(aggregator_data)}
 
     data = json.dumps(chart_dict, cls=DjangoJSONEncoder)
 
@@ -647,12 +646,22 @@ def calculate_gaddidar_share_payments(start_date, end_date, mandi_list=None, agg
                                     'date__gte': start_date, 'date__lte': end_date}
 
     arguments_for_ct = {}
+    arguments_for_gaddidar_commision = {}
+    arguments_for_gaddidar_outliers = {}
+
+    for k, v in parameters_dictionary.items():
+        if v:
+            arguments_for_gaddidar_commision[k] = v
+
     for k, v in parameters_dictionary_for_ct.items():
         if v:
             arguments_for_ct[k] = v
+    for k, v in parameters_dictionary_for_outliers.items():
+        if v:
+            arguments_for_gaddidar_outliers[k] = v
 
-    gc_queryset = GaddidarCommission.objects.all()
-    gso_queryset = GaddidarShareOutliers.objects.all()
+    gc_queryset = GaddidarCommission.objects.filter(**arguments_for_gaddidar_commision)
+    gso_queryset = GaddidarShareOutliers.objects.filter(**arguments_for_gaddidar_outliers)
     combined_ct_queryset = CombinedTransaction.objects.filter(**arguments_for_ct).values(
         'date', 'user_created_id', 'gaddidar', 'gaddidar__gaddidar_name_en', 'mandi', 'mandi__mandi_name_en',
         'gaddidar__discount_criteria').order_by('-date').annotate(Sum('quantity'), Sum('amount'))
@@ -1170,4 +1179,3 @@ def merge_entity(request):
     elif request.method != 'GET':
         HttpResponseBadRequest("<h2>Only GET and POST requests are allowed</h2>")
     return render_to_response('loop/merge_entity.html', template_data, context_instance=context)
-
