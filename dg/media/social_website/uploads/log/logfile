@@ -1,0 +1,31 @@
+[03/Apr/2018 09:43:07] [loop_ivr.views] Reached here in SMS View
+[03/Apr/2018 09:43:07] [loop_ivr.views] sender=918115479516&inNumber=918115479516&msgId=2199356&content=2
+[03/Apr/2018 09:52:04] [loop_ivr.views] Reached here in SMS View
+[03/Apr/2018 09:52:04] [loop_ivr.views] sender=918115479516&inNumber=918115479516&msgId=2199356&content=2
+[03/Apr/2018 09:52:05] [loop_ivr.helper_function] int() argument must be a string or a number, not 'PriceInfoIncoming'
+[03/Apr/2018 10:21:32] [loop_ivr.views] Reached here in SMS View
+[03/Apr/2018 10:21:32] [loop_ivr.views] sender=918115479516&inNumber=918115479516&msgId=1232823838&content=3
+[03/Apr/2018 10:21:33] [loop_ivr.helper_function] int() argument must be a string or a number, not 'PriceInfoIncoming'
+[03/Apr/2018 10:24:20] [loop_ivr.views] Reached here in SMS View
+[03/Apr/2018 10:24:20] [loop_ivr.views] sender=918115479516&inNumber=918115479516&msgId=1232823838&content=3
+[03/Apr/2018 10:24:21] [loop_ivr.helper_function] list indices must be integers, not str
+[03/Apr/2018 10:27:26] [loop_ivr.views] Reached here in SMS View
+[03/Apr/2018 10:27:26] [loop_ivr.views] sender=918115479516&inNumber=918115479516&msgId=bjhwiuwiw191w01&content=3
+[03/Apr/2018 10:27:28] [loop_ivr.helper_function] int() argument must be a string or a number, not 'PriceInfoIncoming'
+[03/Apr/2018 10:28:13] [loop_ivr.views] Reached here in SMS View
+[03/Apr/2018 10:28:13] [loop_ivr.views] sender=918115479516&inNumber=918115479516&msgId=jnasnks&content=3
+[03/Apr/2018 10:28:15] [loop_ivr.helper_function] int() argument must be a string or a number, not 'PriceInfoIncoming'
+[03/Apr/2018 10:29:10] [loop_ivr.views] Reached here in SMS View
+[03/Apr/2018 10:29:10] [loop_ivr.views] sender=918115479516&inNumber=918115479516&msgId=asknsdkn&content=3
+[03/Apr/2018 10:30:34] [loop_ivr.views] Reached here in SMS View
+[03/Apr/2018 10:30:34] [loop_ivr.views] sender=918115479516&inNumber=918115479516&msgId=asknsdkn&content=3
+[03/Apr/2018 10:32:55] [loop_ivr.views] Reached here in SMS View
+[03/Apr/2018 10:32:55] [loop_ivr.views] sender=917503873087&inNumber=917503873087&msgId=asknsdkn&content=3
+[03/Apr/2018 10:34:20] [loop_ivr.views] Reached here in SMS View
+[03/Apr/2018 10:34:20] [loop_ivr.views] sender=919899988764&inNumber=919899988764&msgId=asknsdkn&content=3
+[03/Apr/2018 10:38:29] [loop_ivr.views] Reached here in SMS View
+[03/Apr/2018 10:38:29] [loop_ivr.views] sender=918920862229&inNumber=918920862229&msgId=asknsdkn&content=3
+[10/Apr/2018 09:11:05] [loop_ivr.views] Reached here in SMS View
+[10/Apr/2018 09:11:05] [loop_ivr.views] sender=919555624943&msgId=asdad&content=klnsndflkn&inNumber=8115479516
+[10/Apr/2018 09:31:57] [loop_ivr.views] Reached here in SMS View
+[10/Apr/2018 09:31:57] [loop_ivr.views] sender=919555624943&msgId=asdad&content=23&inNumber=8115479516
