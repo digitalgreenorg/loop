@@ -335,6 +335,7 @@ post_save.connect(save_admin_log, sender=Gaddidar)
 pre_delete.connect(save_admin_log, sender=Gaddidar)
 
 
+
 class GaddidarAssignedMandi(LoopModel):
     """docstring for GaddidarAssignedMandi"""
     id = models.AutoField(primary_key=True)
